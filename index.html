@@ -41,13 +41,13 @@
         <a href="#Number" class="nav-link">Number</a>
         <a href="#String" class="nav-link">String</a>
         <a href="#Array" class="nav-link">Array</a>
-
-        <!-- TODO: create next sections -->
         <a href="#Tuple" class="nav-link">Tuple</a>
         <a href="#Enum" class="nav-link">Enum</a>
         <a href="#Any" class="nav-link">Any</a>
         <a href="#Void" class="nav-link">Void</a>
         <a href="#Null_and_Undefined" class="nav-link">Null and Undefined</a>
+
+        <!-- TODO: add span.keyword where needed in next sections... -->
         <a href="#Never" class="nav-link">Never</a>
         <a href="#Object" class="nav-link">Object</a>
         <a href="#Type_assertions" class="nav-link">Type assertions</a>
@@ -66,7 +66,6 @@
                     types as you would expect in JavaScript, with a convenient enumeration type thrown in to help things
                     along.
                 </p>
-                <code></code>
             </div>
         </section>
         <section class="main-section" id="Boolean">
@@ -76,7 +75,7 @@
             <div>
                 <p>
                     The most basic datatype is the simple true/false value, which JavaScript and TypeScript call a
-                    boolean value.
+                    <span class="keyword">boolean</span> value.
                 </p>
                 <code>let isDone: boolean = false;</code>
             </div>
@@ -88,7 +87,8 @@
             <div>
                 <p>
                     As in JavaScript, all numbers in TypeScript are floating point values. These floating point numbers
-                    get the type number. In addition to hexadecimal and decimal literals, TypeScript also supports
+                    get the type <span class="keyword">number</span>. In addition to hexadecimal and decimal literals,
+                    TypeScript also supports
                     binary and octal literals introduced in ECMAScript 2015.
                 </p>
                 <code>
@@ -97,8 +97,6 @@
                         let binary: number = 0b1010;
                         let octal: number = 0o744;
                 </code>
-
-                <code></code>
             </div>
         </section>
         <section class="main-section" id="String">
@@ -108,8 +106,10 @@
             <div>
                 <p>
                     Another fundamental part of creating programs in JavaScript for webpages and servers alike is
-                    working with textual data. As in other languages, we use the type string to refer to these textual
-                    datatypes. Just like JavaScript, TypeScript also uses double quotes (") or single quotes (') to
+                    working with textual data. As in other languages, we use the type <span
+                        class="keyword">string</span> to refer to these textual
+                    datatypes. Just like JavaScript, TypeScript also uses double quotes <span class="keyword">"</span>
+                    or single quotes <span class="keyword">'</span> to
                     surround string data.
                 </p>
 
@@ -120,8 +120,9 @@
 
                 <p>
                     You can also use template strings, which can span multiple lines and have embedded expressions.
-                    These strings are surrounded by the backtick/backquote (`) character, and embedded expressions are
-                    of the form ${ expr }.
+                    These strings are surrounded by the backtick/backquote <span class="keyword">`</span> character, and
+                    embedded expressions are
+                    of the form <span class="keyword">${ expr }</span>.
                 </p>
 
                 <code>
@@ -133,7 +134,7 @@
                 </code>
 
                 <p>
-                    This is equivalent to declaring sentence like so:
+                    This is equivalent to declaring <span class="keyword">sentence</span> like so:
                 </p>
 
                 <code>
@@ -156,14 +157,359 @@
             <div>
                 <p>
                     TypeScript, like JavaScript, allows you to work with arrays of values. Array types can be written in
-                    one of two ways. In the first, you use the type of the elements followed by [] to denote an array of
+                    one of two ways. In the first, you use the type of the elements followed by <span
+                        class="keyword">[]</span> to denote an array of
                     that element type:
                 </p>
                 <code>let list: number[] = [1, 2, 3];</code>
                 <p>
-                    The second way uses a generic array type, Array<elemType>:
+                    The second way uses a generic array type, <span class="keyword">Array<elemType></span>:
                 </p>
                 <code>let list: Array<number> = [1, 2, 3];</code>
+                </p>
+            </div>
+        </section>
+
+
+
+        <section class="main-section" id="Tuple">
+            <header>
+                <h2>Tuple</h2>
+            </header>
+            <div>
+                <p>
+                    Tuple types allow you to express an array with a fixed number of elements whose types are known, but
+                    need not be the same. For example, you may want to represent a value as a pair of a <span
+                        class="keyword">string</span> and a
+                    <span class="keyword">number</span>:
+                </p>
+
+                <code>// Declare a tuple type
+                    let x: [string, number];
+                    // Initialize it
+                    x = ["hello", 10]; // OK
+                    // Initialize it incorrectly
+                    x = [10, "hello"]; // Error</code>
+                <p>
+                    When accessing an element with a known index, the correct type is retrieved:
+                </p>
+
+                <code>
+                    console.log(x[0].substring(1)); // OK
+                    console.log(x[1].substring(1)); // Error, 'number' does not have 'substring'
+                </code>
+
+                <p>
+                    Accessing an element outside the set of known indices fails with an error:
+                </p>
+
+                <code>
+                    x[3] = "world"; // Error, Property '3' does not exist on type '[string, number]'.
+                    
+                    console.log(x[5].toString()); // Error, Property '5' does not exist on type '[string, number]'.
+                </code>
+            </div>
+        </section>
+        <section class="main-section" id="Enum">
+            <header>
+                <h2>Enum</h2>
+            </header>
+            <div>
+                <p>
+                    A helpful addition to the standard set of datatypes from JavaScript is the <span
+                        class="keyword">enum</span>. As in languages
+                    like C#, an enum is a way of giving more friendly names to sets of numeric values.
+                </p>
+
+                <code>
+                        enum Color {Red, Green, Blue}
+                    let c: Color = Color.Green;
+                </code>
+                <p>
+                    By default, enums begin numbering their members starting at <span class="keyword">0</span>. You can
+                    change this by manually
+                    setting the value of one of its members. For example, we can start the previous example at <span
+                        class="keyword">1</span> instead
+                    of <span class="keyword">0</span>:
+                </p>
+
+                <code>
+                    enum Color {Red = 1, Green, Blue}
+                    let c: Color = Color.Green;
+                </code>
+                <p>
+                    Or, even manually set all the values in the enum:
+                </p>
+
+                <code>
+                    enum Color {Red = 1, Green = 2, Blue = 4}
+                    let c: Color = Color.Green;
+                </code>
+
+                <p>
+                    A handy feature of enums is that you can also go from a numeric value to the name of that value in
+                    the
+                    enum. For example, if we had the value <span class="keyword">2</span> but weren’t sure what that
+                    mapped to in the <span class="keyword">Color</span> enum
+                    above,
+                    we could look up the corresponding name:
+                </p>
+
+                <code>
+                    enum Color {Red = 1, Green, Blue}
+                    let colorName: string = Color[2];
+                
+                    console.log(colorName); // Displays 'Green' as its value is 2 above
+                </code>
+            </div>
+        </section>
+        <section class="main-section" id="Any">
+            <header>
+                <h2>Any</h2>
+            </header>
+            <div>
+                <p>
+                    We may need to describe the type of variables that we do not know when we are writing an
+                    application.
+                    These values may come from dynamic content, e.g. from the user or a 3rd party library. In these
+                    cases, we want to opt-out of type checking and let the values pass through compile-time checks. To
+                    do so, we label these with the <span class="keyword">any</span> type:
+                </p>
+
+                <code>
+                    let notSure: any = 4;
+                    notSure = "maybe a string instead";
+                    notSure = false; // okay, definitely a boolean
+                </code>
+
+                <p>
+                    The <span class="keyword">any</span> type is a powerful way to work with existing JavaScript,
+                    allowing you to gradually opt-in
+                    and opt-out of type checking during compilation. You might expect <span
+                        class="keyword">Object</span> to play a similar role, as
+                    it
+                    does in other languages. However, variables of type <span class="keyword">Object</span> only allow
+                    you to assign any value to
+                    them.
+                    You can’t call arbitrary methods on them, even ones that actually exist:
+                </p>
+
+                <code>
+                    let notSure: any = 4;
+                    notSure.ifItExists(); // okay, ifItExists might exist at runtime
+                    notSure.toFixed(); // okay, toFixed exists (but the compiler doesn't check)
+                    
+                    let prettySure: Object = 4;
+                    prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object'.
+                </code>
+
+                <blockquote>Note: Avoid using <span class="keyword">Object</span> in favor of the non-primitive <span
+                        class="keyword">object</span> type as described in our Do’s and
+                    Don’ts
+                    section.</blockquote>
+
+                <p>
+                    The <span class="keyword">any</span> type is also handy if you know some part of the type, but
+                    perhaps not all of it. For
+                    example, you may have an array but the array has a mix of different types:
+                </p>
+                <code>
+                    let list: any[] = [1, true, "free"];
+
+                    list[1] = 100;
+                </code>
+            </div>
+        </section>
+        <section class="main-section" id="Void">
+            <header>
+                <h2>Void</h2>
+            </header>
+            <div>
+                <p>
+                    <span class="keyword">void</span> is a little like the opposite of <span class="keyword">any</span>:
+                    the absence of having any type at all. You may commonly
+                    see
+                    this as the return type of functions that do not return a value:
+                </p>
+
+                <code>
+                    function warnUser(): void {
+                        console.log("This is my warning message");
+                    }
+                </code>
+
+                <p>Declaring variables of type <span class="keyword">void</span> is not useful because you can only
+                    assign <span class="keyword">null</span> (only if
+                    <span class="keyword">--strictNullChecks</span> is not specified, see next section) or <span
+                        class="keyword">undefined</span> to them:</p>
+
+                <code>
+                    let unusable: void = undefined;
+                    unusable = null; // OK if `--strictNullChecks` is not given
+                </code>
+            </div>
+        </section>
+        <section class="main-section" id="Null_and_Undefined">
+            <header>
+                <h2>Null and Undefined</h2>
+            </header>
+            <div>
+                <p>
+                    In TypeScript, both <span class="keyword">undefined</span> and <span class="keyword">null</span>
+                    actually have their own types named <span class="keyword">undefined</span> and <span
+                        class="keyword">null</span>
+                    respectively. Much like <span class="keyword">void</span>, they’re not extremely useful on their
+                    own:
+                </p>
+
+                <code>// Not much else we can assign to these variables!
+                    let u: undefined = undefined;
+                    let n: null = null;</code>
+                <p>
+                    By default <span class="keyword">null</span> and <span class="keyword">undefined</span> are subtypes
+                    of all other types. That means you can assign <span class="keyword">null</span> and
+                    <span class="keyword">undefined</span> to something like <span class="keyword">number</span>.
+                </p>
+
+                <p>
+                    However, when using the <span class="keyword">--strictNullChecks</span> flag, <span
+                        class="keyword">null</span> and <span class="keyword">undefined</span> are only assignable to
+                    <span class="keyword">any</span> and
+                    their respective types (the one exception being that <span class="keyword">undefined</span> is also
+                    assignable to <span class="keyword">void</span>). This
+                    helps avoid many common errors. In cases where you want to pass in either a <span
+                        class="keyword">string</span> or <span class="keyword">null</span> or
+                    <span class="keyword">undefined</span>, you can use the union type <span class="keyword">string |
+                        null | undefined</span>.
+                </p>
+
+                <p>
+                    Union types are an advanced topic that we’ll cover in a later chapter.
+                </p>
+
+                <blockquote>As a note: we encourage the use of <span class="keyword">--strictNullChecks</span> when
+                    possible, but for the purposes of this
+                    handbook, we will assume it is turned off.</blockquote>
+            </div>
+        </section>
+        <section class="main-section" id="Never">
+            <header>
+                <h2>Never</h2>
+            </header>
+            <div>
+                <p>
+                    The never type represents the type of values that never occur. For instance, never is the return
+                    type for a function expression or an arrow function expression that always throws an exception or
+                    one that never returns; Variables also acquire the type never when narrowed by any type guards that
+                    can never be true.
+                </p>
+
+                <p>
+                    The never type is a subtype of, and assignable to, every type; however, no type is a subtype of, or
+                    assignable to, never (except never itself). Even any isn’t assignable to never.
+                </p>
+
+                <p>
+                    Some examples of functions returning never:
+                </p>
+
+                <code>
+                    // Function returning never must have unreachable end point
+                    function error(message: string): never {
+                        throw new Error(message);
+                    }
+                    
+                    // Inferred return type is never
+                    function fail() {
+                        return error("Something failed");
+                    }
+                    
+                    // Function returning never must have unreachable end point
+                    function infiniteLoop(): never {
+                        while (true) {
+                        }
+                    }
+                </code>
+            </div>
+        </section>
+        <section class="main-section" id="Object">
+            <header>
+                <h2>Object</h2>
+            </header>
+            <div>
+                <p>object is a type that represents the non-primitive type, i.e. anything that is not number, string,
+                    boolean, symbol, null, or undefined.</p>
+
+                <p>
+                    With object type, APIs like Object.create can be better represented. For example:
+                </p>
+
+                <code>
+                    declare function create(o: object | null): void;
+                
+                    create({ prop: 0 }); // OK
+                    create(null); // OK
+                    
+                    create(42); // Error
+                    create("string"); // Error
+                    create(false); // Error
+                    create(undefined); // Error
+                </code>
+            </div>
+        </section>
+        <section class="main-section" id="Type_assertions">
+            <header>
+                <h2>Type assertions</h2>
+            </header>
+            <div>
+                <p>
+                    Sometimes you’ll end up in a situation where you’ll know more about a value than TypeScript does.
+                    Usually this will happen when you know the type of some entity could be more specific than its
+                    current type.
+                </p>
+
+                <p>
+                    Type assertions are a way to tell the compiler “trust me, I know what I’m doing.” A type assertion
+                    is like a type cast in other languages, but performs no special checking or restructuring of data.
+                    It has no runtime impact, and is used purely by the compiler. TypeScript assumes that you, the
+                    programmer, have performed any special checks that you need.
+                </p>
+
+                <p>
+                    Type assertions have two forms. One is the “angle-bracket” syntax:
+                </p>
+
+                <code>let someValue: any = "this is a string";
+                
+                let strLength: number = (<string>someValue).length;</code>
+
+                <p>
+                    And the other is the as-syntax:
+                </p>
+
+                <code>
+                    let someValue: any = "this is a string";
+                
+                    let strLength: number = (someValue as string).length;
+                </code>
+
+                <p>
+                    The two samples are equivalent. Using one over the other is mostly a choice of preference; however,
+                    when using TypeScript with JSX, only as-style assertions are allowed.
+                </p>
+            </div>
+        </section>
+        <section class="main-section" id="A_note_about_‘let’">
+            <header>
+                <h2>A note about ‘let’</h2>
+            </header>
+            <div>
+                <p>
+                    You may’ve noticed that so far, we’ve been using the let keyword instead of JavaScript’s var keyword
+                    which you might be more familiar with. The let keyword was introduced to JavaScript in ES2015 and is
+                    now considered the standard because it’s safer than var. We’ll discuss the details later, but many
+                    common problems in JavaScript are alleviated by using let, so you should use it instead of var
+                    whenever possible.
                 </p>
             </div>
         </section>
