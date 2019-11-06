@@ -77,7 +77,9 @@
                     The most basic datatype is the simple true/false value, which JavaScript and TypeScript call a
                     <span class="keyword">boolean</span> value.
                 </p>
-                <code>let isDone: boolean = false;</code>
+                <code>
+                    <span class="token key-word">let </span><span class="token function-variable function">isDone</span><span class="token punctuation">:</span> boolean <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+                </code>
             </div>
         </section>
         <section class="main-section" id="Number">
@@ -92,10 +94,12 @@
                     binary and octal literals introduced in ECMAScript 2015.
                 </p>
                 <code>
-                        let decimal: number = 6;
-                        let hex: number = 0xf00d;
-                        let binary: number = 0b1010;
-                        let octal: number = 0o744;
+                        <span class="token key-word">let</span> <span class="token function-variable function">decimal</span><span class="token punctuation">:</span> number <span class="token operator">=</span> <span class="token number">6</span><span class="token punctuation">;</span><br>
+                        <span class="token key-word">let</span> <span class="token function-variable function">hex</span><span class="token punctuation">:</span> number <span class="token operator">=</span> <span class="token">0xf00d</span><span class="token punctuation">;</span><br>
+                        <span class="token key-word">let</span> <span class="token function-variable function">
+                            binary
+                        </span><span class="token punctuation">:</span> number <span class="token operator">=</span> <span class="token">0b1010</span><span class="token punctuation">;</span><br>
+                        <span class="token key-word">let</span> <span class="token function-variable function">octal</span><span class="token punctuation">:</span> number <span class="token operator">=</span> <span class="token">0o744</span><span class="token punctuation">;</span>
                 </code>
             </div>
         </section>
@@ -114,8 +118,8 @@
                 </p>
 
                 <code>
-                    let color: string = "blue";
-                    color = 'red';
+                    <span class="token key-word">let</span> color<span class="token punctuation">:</span> string <span class="token operator">=</span> <span class="token string"><span class="token punctuation">"</span>blue</span><span class="token punctuation">";</span></span><br>
+                    color <span class="token operator">=</span> <span class="token string">'red'</span><span class="token punctuation">;</span>
                 </code>
 
                 <p>
@@ -126,11 +130,11 @@
                 </p>
 
                 <code>
-                    let fullName: string = `Bob Bobbington`;
-                    let age: number = 37;
-                    let sentence: string = `Hello, my name is ${ fullName }.
+                    <span class="token key-word">let</span> fullName<span class="token punctuation">:</span> string <span class="token operator">=</span> <span class="token string"><span class="token punctuation">`</span>Bob Bobbington</span><span class="token punctuation">`;</span><br>
+                    <span class="token key-word">let</span> age<span class="token punctuation">:</span> number <span class="token operator">=</span> <span class="token number">37</span><span class="token punctuation">;</span><br>
+                    <span class="token key-word">let</span> sentence<span class="token punctuation">:</span> string <span class="token operator">=</span> <span class="token string"><span class="token punctuation">`</span>Hello, my name is ${ fullName }.<br><br>
                     
-                    I'll be ${ age + 1 } years old next month.`;
+                    I'll be ${ age + <span class="token number">1</span> } years old next month.</span><span class="token punctuation">`;</span>
                 </code>
 
                 <p>
@@ -138,8 +142,8 @@
                 </p>
 
                 <code>
-                        let sentence: string = "Hello, my name is " + fullName + ".\n\n" +
-                        "I'll be " + (age + 1) + " years old next month.";
+                        <span class="token key-word">let</span> sentence<span class="token punctuation">:</span> string <span class="token operator">=</span> <span class="token string"><span class="token punctuation">"</span>Hello, my name is "</span> <span class="token punctuation">+</span> fullName <span class="token punctuation">+</span> <span class="token string"><span class="token punctuation">"</span>.\n\n<span class="token punctuation">"</span></span> <span class="token punctuation">+</span>
+                        <span class="token string"><span class="token punctuation">"</span>I'll be <span class="token punctuation">"</span></span> <span class="token punctuation">+ (</span>age <span class="token punctuation">+</span> <span class="token number">1</span><span class="token punctuation">) +</span> <span class="token string"><span class="token punctuation">"</span> years old next month.</span><span class="token punctuation">";</span>
                 </code>
                 <ul>
                     <li>feature 1</li>
@@ -161,11 +165,11 @@
                         class="keyword">[]</span> to denote an array of
                     that element type:
                 </p>
-                <code>let list: number[] = [1, 2, 3];</code>
+                <code><span class="token key-word">let</span> list<span class="token punctuation">:</span> number<span class="token punctuation">[]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span>, <span class="token number">2</span>, <span class="token number">3</span><span class="token punctuation">];</span></code>
                 <p>
                     The second way uses a generic array type, <span class="keyword">Array<elemType></span>:
                 </p>
-                <code>let list: Array<number> = [1, 2, 3];</code>
+                <code><span class="token key-word">let</span> list<span class="token punctuation">:</span> Array<number> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">];</span></code>
                 </p>
             </div>
         </section>
@@ -184,19 +188,19 @@
                     <span class="keyword">number</span>:
                 </p>
 
-                <code>// Declare a tuple type
-                    let x: [string, number];
-                    // Initialize it
-                    x = ["hello", 10]; // OK
-                    // Initialize it incorrectly
-                    x = [10, "hello"]; // Error</code>
+                <code><span class="token comment">// Declare a tuple type</span><br>
+                    <span class="token key-word">let</span> x<span class="token punctuation">: [</span>string, number<span class="token punctuation">];</span><br><br>
+                    <span class="token comment">// Initialize it</span><br>
+                    x <span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">"hello"</span>, <span class="token number">10</span><span class="token punctuation">];</span> // OK<br><br>
+                    <span class="token comment">// Initialize it incorrectly</span><br>
+                    x <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,"</span><span class="token string">hello</span><span class="token punctuation">"];</span> <span class="token comment">// Error</span></code>
                 <p>
                     When accessing an element with a known index, the correct type is retrieved:
                 </p>
 
                 <code>
-                    console.log(x[0].substring(1)); // OK
-                    console.log(x[1].substring(1)); // Error, 'number' does not have 'substring'
+                    console<span class="token punctuation">.</span><span class="token function">log<span class="token punctuation">(</span></span>x<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">].</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">))</span><span class="token punctuation">;</span> <span class="token comment">// OK</span><br><br>
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">].</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">))</span><span class="token punctuation">;</span> <span class="token comment">// Error, 'number' does not have 'substring'</span>
                 </code>
 
                 <p>
@@ -204,9 +208,9 @@
                 </p>
 
                 <code>
-                    x[3] = "world"; // Error, Property '3' does not exist on type '[string, number]'.
+                    x<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string"><span class="token punctuation">"</span>world</span><span class="token punctuation">";</span> <span class="token comment">// Error, Property '3' does not exist on type '[string, number]'.</span><br><br>
                     
-                    console.log(x[5].toString()); // Error, Property '5' does not exist on type '[string, number]'.
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">());</span> <span class="token comment">// Error, Property '5' does not exist on type '[string, number]'.</span>
                 </code>
             </div>
         </section>
@@ -222,8 +226,8 @@
                 </p>
 
                 <code>
-                        enum Color {Red, Green, Blue}
-                    let c: Color = Color.Green;
+                    <span class="token key-word">enum</span> <span class="token function">Color</span> <span class="token punctuation">{</span><br>&nbsp;&nbsp;Red<span class="token punctuation">,</span><br>&nbsp;&nbsp;Green<span class="token punctuation">,</span><br>&nbsp;&nbsp;Blue<span class="token punctuation"><br>}</span><br><br>
+                    <span class="token key-word">let</span> c<span class="token punctuation">:</span> Color <span class="token operator">=</span> Color<span class="token punctuation">.</span><span class="token function">Green</span><span class="token punctuation">;</span>
                 </code>
                 <p>
                     By default, enums begin numbering their members starting at <span class="keyword">0</span>. You can
@@ -234,16 +238,16 @@
                 </p>
 
                 <code>
-                    enum Color {Red = 1, Green, Blue}
-                    let c: Color = Color.Green;
+                    <span class="token key-word">enum</span> <span class="token function">Color</span> <span class="token punctuation">{</span>Red <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> Green<span class="token punctuation">,</span> Blue<span class="token punctuation">}</span><br>
+                    <span class="token key-word">let</span> c<span class="token punctuation">:</span> Color <span class="token operator">=</span> Color<span class="token punctuation">.</span><span class="token function">Green</span><span class="token punctuation">;</span>
                 </code>
                 <p>
                     Or, even manually set all the values in the enum:
                 </p>
 
                 <code>
-                    enum Color {Red = 1, Green = 2, Blue = 4}
-                    let c: Color = Color.Green;
+                    <span class="token key-word">enum</span> Color <span class="token punctuation">{</span>Red <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> Green <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">,</span> Blue <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">}</span><br><br>
+                    <span class="token key-word">let</span> c<span class="token punctuation">:</span> Color <span class="token operator">=</span> Color<span class="token punctuation">.</span><span class="token function">Green</span><span class="token punctuation">;</span>
                 </code>
 
                 <p>
@@ -256,10 +260,10 @@
                 </p>
 
                 <code>
-                    enum Color {Red = 1, Green, Blue}
-                    let colorName: string = Color[2];
+                    <span class="token key-word">enum</span> Color <span class="token punctuation">{</span>Red <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> Green<span class="token punctuation">,</span> Blue<span class="token punctuation">}</span><br><br>
+                    <span class="token key-word">let</span> colorName: string <span class="token operator">=</span> Color<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">];</span><br>
                 
-                    console.log(colorName); // Displays 'Green' as its value is 2 above
+                    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>colorName<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Displays 'Green' as its value is 2 above</span>
                 </code>
             </div>
         </section>
@@ -277,9 +281,9 @@
                 </p>
 
                 <code>
-                    let notSure: any = 4;
-                    notSure = "maybe a string instead";
-                    notSure = false; // okay, definitely a boolean
+                    <span class="token key-word">let</span> notSure<span class="token punctuation">:</span> any <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span><br>
+                    notSure <span class="token operator">=</span> <span class="token string"><span class="token punctuation">"</span>maybe a string instead</span><span class="token punctuation">";</span><br>
+                    notSure <span class="token punctuation">=</span> false<span class="token punctuation">;</span> <span class="token comment">// okay, definitely a boolean</span>
                 </code>
 
                 <p>
@@ -295,12 +299,12 @@
                 </p>
 
                 <code>
-                    let notSure: any = 4;
-                    notSure.ifItExists(); // okay, ifItExists might exist at runtime
-                    notSure.toFixed(); // okay, toFixed exists (but the compiler doesn't check)
+                    <span class="token key-word">let</span> notSure<span class="token punctuation">:</span> any <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span><br>
+                    notSure<span class="token punctuation">.</span><span class="token function">ifItExists</span><span class="token punctuation">();</span> <span class="token comment">// okay, ifItExists might exist at runtime</span><br><br>
+                    notSure<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">();</span> <span class="token comment">// okay, toFixed exists (but the compiler doesn't check)</span><br><br>
                     
-                    let prettySure: Object = 4;
-                    prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object'.
+                    <span class="token key-word">let</span> prettySure<span class="token punctuation">:</span> Object <span class="token operator">=</span> <span class="token number">4</span><span class="token punctuation">;</span><br>
+                    prettySure<span class="token punctuation">.</span><span class="token function">toFixed</span><span class="token punctuation">();</span> <span class="token comment">// Error: Property 'toFixed' doesn't exist on type 'Object'.</span><br>
                 </code>
 
                 <blockquote>Note: Avoid using <span class="keyword">Object</span> in favor of the non-primitive <span
@@ -314,9 +318,9 @@
                     example, you may have an array but the array has a mix of different types:
                 </p>
                 <code>
-                    let list: any[] = [1, true, "free"];
+                    <span class="token key-word">let</span> list<span class="token punctuation">:</span> any<span class="token punctuation">[]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> true<span class="token punctuation">,</span> <span class="token string">"free"</span><span class="token punctuation">];</span><br>
 
-                    list[1] = 100;
+                    list<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
                 </code>
             </div>
         </section>
@@ -333,9 +337,9 @@
                 </p>
 
                 <code>
-                    function warnUser(): void {
-                        console.log("This is my warning message");
-                    }
+                    function <span class="token function">warnUser</span>()<span class="token punctuation">:</span> void <span class="token punctuation">{</span><br>
+                    &nbsp;&nbsp;console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string"><span class="token punctuation">"</span>This is my warning message</span><span class="token punctuation">");</span><br>
+                    <span class="token punctuation">}</span>
                 </code>
 
                 <p>Declaring variables of type <span class="keyword">void</span> is not useful because you can only
@@ -344,8 +348,8 @@
                         class="keyword">undefined</span> to them:</p>
 
                 <code>
-                    let unusable: void = undefined;
-                    unusable = null; // OK if `--strictNullChecks` is not given
+                    <span class="token key-word">let</span> unusable<span class="token punctuation">:</span> void <span class="token operator">=</span> undefined<span class="token punctuation">;</span><br>
+                    unusable <span class="token operator">=</span> null<span class="token punctuation">;</span> <span class="token comment">// OK if `--strictNullChecks` is not given</span>
                 </code>
             </div>
         </section>
@@ -362,9 +366,9 @@
                     own:
                 </p>
 
-                <code>// Not much else we can assign to these variables!
-                    let u: undefined = undefined;
-                    let n: null = null;</code>
+                <code><span class="token comment">// Not much else we can assign to these variables!<br></span>
+                    <span class="token key-word">let</span> u<span class="token punctuation">:</span> undefined <span class="token operator">=</span> undefined<span class="token punctuation">;</span><br>
+                    <span class="token key-word">let</span> n<span class="token punctuation">:</span> null <span class="token operator">=</span> null<span class="token punctuation">;</span></code>
                 <p>
                     By default <span class="keyword">null</span> and <span class="keyword">undefined</span> are subtypes
                     of all other types. That means you can assign <span class="keyword">null</span> and
@@ -414,21 +418,21 @@
                 </p>
 
                 <code>
-                    // Function returning never must have unreachable end point
-                    function error(message: string): never {
-                        throw new Error(message);
-                    }
+                    <span class="token comment">// Function returning never must have unreachable end point</span><br>
+                    <span class="token key-word">function</span> <span class="token function">error</span><span class="token punctuation">(</span>message<span class="token punctuation">:</span> string<span class="token punctuation">):</span> never <span class="token punctuation">{</span><br>
+                     &nbsp;&nbsp;<span class="token key-word">throw</span> new Error<span class="token punctuation">(</span>message<span class="token punctuation">);</span><br>
+                    <span class="token punctuation">}</span><br><br>
                     
-                    // Inferred return type is never
-                    function fail() {
-                        return error("Something failed");
-                    }
+                    <span class="token comment">// Inferred return type is never </span><br>
+                    <span class="token key-word">function</span> <span class="token function">fail</span><span class="token punctuation">() {</span><br>
+                        &nbsp;&nbsp;<span class="token key-word">return</span> error<span class="token punctuation">(</span><span class="token string">"Something failed"</span><span class="token punctuation">);</span><br>
+                    <span class="token punctuation">}</span><br><br>
                     
-                    // Function returning never must have unreachable end point
-                    function infiniteLoop(): never {
-                        while (true) {
-                        }
-                    }
+                    <span class="token comment">// Function returning never must have unreachable end point</span><br>
+                    <span class="token key-word">function</span> <span class="token function">infiniteLoop</span><span class="token punctuation">():</span> never <span class="token punctuation">{</span><br>
+                    &nbsp;&nbsp;<span class="token key-word">while</span> <span class="token punctuation">(</span>true<span class="token punctuation">) {</span><br>
+                    &nbsp;&nbsp;<span class="token punctuation">}</span><br>
+                    <span class="token punctuation">}</span>
                 </code>
             </div>
         </section>
@@ -445,15 +449,15 @@
                 </p>
 
                 <code>
-                    declare function create(o: object | null): void;
+                    declare <span class="token key-word">function</span> <span class="token function">create</span>(o: object | null): void;<br><br>
                 
-                    create({ prop: 0 }); // OK
-                    create(null); // OK
+                    <span class="token function">create</span><span class="token punctuation">({</span> prop<span class="token punctuation">:</span> <span class="token number">0</span> <span class="token punctuation">});</span> <span class="token comment">// OK</span> <br>
+                    <span class="token function">create</span><span class="token punctuation">(</span>null<span class="token punctuation">);</span> <span class="token comment">// OK</span> <br><br>
                     
-                    create(42); // Error
-                    create("string"); // Error
-                    create(false); // Error
-                    create(undefined); // Error
+                    <span class="token function">create</span><span class="token punctuation">(</span><span class="token number">42</span><span class="token punctuation">);</span> <span class="token comment">// Error</span> <br>
+                    <span class="token function">create</span><span class="token punctuation">(</span><span class="token string"><span class="token punctuation">"</span>string<span class="token punctuation">"</span></span>)<span class="token punctuation">;</span> <span class="token comment">// Error</span> <br>
+                    <span class="token function">create</span><span class="token punctuation">(</span>false<span class="token punctuation">);</span> <span class="token comment">// Error</span> <br>
+                    <span class="token function">create</span><span class="token punctuation">(</span>undefined<span class="token punctuation">);</span> <span class="token comment">// Error</span>
                 </code>
             </div>
         </section>
@@ -479,18 +483,18 @@
                     Type assertions have two forms. One is the “angle-bracket” syntax:
                 </p>
 
-                <code>let someValue: any = "this is a string";
+                <code><span class="token key-word">let</span> someValue<span class="token punctuation">:</span> any <span class="token operator">=</span> <span class="token string"><span class="token punctuation">"</span>this is a string</span><span class="token punctuation">";</span><br><br>
                 
-                let strLength: number = (<string>someValue).length;</code>
+                <span class="token key-word">let</span> strLength<span class="token punctuation">:</span> number <span class="token operator">=</span> <span class="token punctuation">(</span><string>someValue<span class="token punctuation">).</span><span class="token function">length</span><span class="token punctuation">;</span></code><br>
 
                 <p>
                     And the other is the as-syntax:
                 </p>
 
                 <code>
-                    let someValue: any = "this is a string";
+                    <span class="token key-word">let</span> someValue<span class="token punctuation">:</span> any <span class="token operator">=</span><span class="token punctuation">"</span><span class="token string">this is a string</span><span class="token punctuation">";</span><br><br>
                 
-                    let strLength: number = (someValue as string).length;
+                    <span class="token key-word">let</span> strLength<span class="token punctuation">:</span> number <span class="token operator">=</span> <span class="token punctuation">(</span>someValue as string<span class="token punctuation">).</span><span class="token function">length</span><span class="token punctuation">;</span>
                 </code>
 
                 <p>
