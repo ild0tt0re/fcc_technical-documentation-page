@@ -1,8 +1,60 @@
+:root {
+  --mobile-margin: 20px;
+}
 
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
 
+#navbar h1 {
+  font-size: 2em;
+}
+
+.ts-script-text {
+  font-weight: 100;
+}
+
+.main-section:after {
+  content: "";
+  display: block;
+  position: relative;
+  margin: 40px 20px;
+  border-bottom: 1px solid #ececec;
+}
+
+header,
+p {
+  padding: 0 var(--mobile-margin);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+code {
+  display: block;
+  background-color: rgb(30, 37, 61);
+  color: white;
+  padding: var(--mobile-margin);
+  margin: 40px 0;
+}
+
+ul {
+  line-height: 2.2;
+}
+
+.main-header {
+  display: flex;
+  align-items: center;
+}
+
+#ts-icon {
+  width: 50px;
+}
 
 @media screen and (min-width: 768px) {
-    #navbar {
-        position: fixed;
-    }
+  #navbar {
+    position: fixed;
+  }
 }
