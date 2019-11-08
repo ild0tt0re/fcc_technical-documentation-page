@@ -251,6 +251,9 @@ ul {
     max-width: 1300px;
     margin: auto;
   }
+  #main-doc {
+    margin-top: 30px;
+  }
   #navbar {
     position: relative;
     top: 0;
@@ -262,7 +265,5 @@ ul {
   }
   .page-wrapper {
     display: flex;
-  }
-  .bottom-menu {
   }
 }
