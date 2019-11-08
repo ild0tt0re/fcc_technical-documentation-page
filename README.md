@@ -1,7 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/032edfaa-a2a5-4da6-8523-73d6c928c811/deploy-status)](https://app.netlify.com/sites/fcc-rwdp-techdocspage/deploys)
 
 # RESPONSIVE WEB DESIGN PROJECT | TECHNICAL DOCUMENTATION PAGE
-![Project-preview](technical-documentation-page.png)
+![Project-preview](technical-documentation-page-preview.png)
 > This is the fourfh project of _freeCodeCamp "RESPONSIVE WEB DESIGN" Certification_
 
 ## SUMMARY
