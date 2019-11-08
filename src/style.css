@@ -1,5 +1,8 @@
 :root {
   --mobile-margin: 20px;
+  --main-section-anchor-space: 4px;
+  --main-section-separator-space: 40px;
+
   --main-color: #294e80;
   --bottom-bar-back-color: #fff;
   --bottom-bar-border-color: #e4e6ec;
@@ -32,11 +35,19 @@ body {
   font-weight: 100;
 }
 
+.main-section {
+  padding-top: var(--main-section-anchor-space);
+}
+
+.main-section h2 {
+  margin-top: 0;
+}
+
 .main-section:after {
   content: "";
   display: block;
   position: relative;
-  margin: 40px 20px;
+  margin: var(--main-section-separator-space) 20px calc(var(--main-section-separator-space) - var(--main-section-anchor-space));
   border-bottom: 1px solid #ececec;
 }
 
