@@ -178,6 +178,10 @@ ul {
   width: 50px;
 }
 
+#docs-icon {
+  transform: translate(0, 5px);
+}
+
 #docs-icon path {
   fill: var(--card-fore-color);
 }
