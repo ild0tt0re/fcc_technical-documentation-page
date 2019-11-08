@@ -90,6 +90,10 @@ blockquote {
   line-height: 1.5;
 }
 
+#Table_of_Contents h2 {
+  padding: var(--mobile-margin);
+}
+
 header {
   color: var(--card-fore-color);
 }
@@ -105,7 +109,7 @@ code {
 
 blockquote {
   padding: 10px var(--mobile-margin);
-  margin: 0 0 20px;
+  margin: 0 0 30px;
   border-left: 8px solid var(--main-color);
   background: rgba(187, 239, 253, 0.3);
   color: var(--card-fore-color);
