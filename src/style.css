@@ -82,7 +82,7 @@ a:visited {
   border-bottom: 1px solid var(--section-separator);
 }
 
-.main-section:not(last-child):after {
+.main-section:last-child::after {
   border: none;
 }
 
