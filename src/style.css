@@ -1,6 +1,9 @@
 :root {
   --mobile-margin: 20px;
   --main-color: #294e80;
+  --bottom-bar-back-color: #fff;
+  --bottom-bar-border-color: #e4e6ec;
+  --menu-fore-color: #53586a;
 
   --pre-fore-color: #e57373;
   --token-color-a: #7f99a5;
@@ -119,6 +122,39 @@ ul {
 #ts-icon {
   width: 50px;
 }
+
+.bottom-bar {
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  width: 100vw;
+  z-index: 9999;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background: var(--bottom-bar-back-color);
+  border-top: 1px solid var(--bottom-bar-border-color);
+}
+
+.bottom-bar_btn {
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: var(--menu-fore-color);
+  display: inline-block;
+  width: 25%;
+  height: 61px;
+  text-align: center;
+  margin: 0.5rem 0 0;
+  border: none;
+  line-height: 61px;
+}
+
+.fa-freecodecamp {
+  fill: var(--menu-fore-color);
+}
+
+
 
 @media screen and (min-width: 768px) {
   #navbar {
