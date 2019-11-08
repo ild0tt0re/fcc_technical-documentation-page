@@ -38,7 +38,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 0 60px;
   padding: 0;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
@@ -80,6 +80,10 @@ a:visited {
   margin: var(--main-section-separator-space) 20px
     calc(var(--main-section-separator-space) - var(--main-section-anchor-space));
   border-bottom: 1px solid var(--section-separator);
+}
+
+.main-section:not(last-child):after {
+  border: none;
 }
 
 header,
@@ -210,7 +214,8 @@ ul {
   line-height: 61px;
 }
 
-.fa-freecodecamp {
+.fa-freecodecamp,
+#top-arrow path {
   fill: var(--menu-fore-color);
 }
 
@@ -242,7 +247,8 @@ ul {
   display: inline-block;
 }
 
-.dark #night-theme-icon {
+.dark #night-theme-icon,
+#top-arrow {
   display: none;
 }
 
@@ -265,5 +271,11 @@ ul {
   }
   .page-wrapper {
     display: flex;
+  }
+  #menu-link {
+    display: none;
+  }
+  #top-arrow {
+    display: inline-block;
   }
 }
