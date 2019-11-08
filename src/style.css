@@ -7,6 +7,8 @@
   --bottom-bar-back-color: #fff;
   --bottom-bar-border-color: #e4e6ec;
   --menu-fore-color: #53586a;
+  --section-separator: #ececec;
+  --a-visited-color: #53586a;
 
   --pre-fore-color: #e57373;
   --token-color-a: #7f99a5;
@@ -17,6 +19,21 @@
   --token-color-f: #ce93d8;
   --token-color-g: #26c6da;
   --token-color-h: #e57373;
+  --table-of-contents-color: rgb(17,17,17);
+}
+
+/* Overwrite for DarkTheme */
+.dark {
+  --back-color: #2a314c;
+  --fore-color-light: #858ca8;
+  --bottom-bar-back-color: #434e76;
+  --bottom-bar-border-color: #13151b;
+  --menu-fore-color: #5db7fe;
+  --card-fore-color: #E3E7ED;
+  --a-link-color: #6dc7fd;
+  --a-visited-color: #5db7fe;
+  --table-of-contents-color: #DCE0EF;
+  --section-separator: #7B84AA;
 }
 
 body {
@@ -24,6 +41,16 @@ body {
   padding: 0;
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
+  background: var(--back-color);
+  color: var(--fore-color-light);
+}
+
+a {
+  color: var(--a-link-color);
+}
+
+a:visited {
+  color: var(--a-visited-color);
 }
 
 #navbar h1 {
@@ -51,7 +78,7 @@ body {
   position: relative;
   margin: var(--main-section-separator-space) 20px
     calc(var(--main-section-separator-space) - var(--main-section-anchor-space));
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid var(--section-separator);
 }
 
 header,
@@ -60,6 +87,10 @@ blockquote {
   padding: 0 var(--mobile-margin);
   font-size: 18px;
   line-height: 1.5;
+}
+
+header {
+  color: var(--card-fore-color);
 }
 
 code {
@@ -76,6 +107,7 @@ blockquote {
   margin: 0 0 20px;
   border-left: 8px solid var(--main-color);
   background: rgba(187, 239, 253, 0.3);
+  color: var(--card-fore-color);
 }
 
 .keyword {
@@ -182,11 +214,23 @@ ul {
   font-family: sans-serif;
   opacity: 0.6;
   padding: 0.2em 0;
-  color: #111;
+  color: var(--table-of-contents-color);
   font-size: 14px;
   font-weight: 600;
   display: block;
   text-decoration: none;
+}
+
+#light-theme-icon {
+  display: none;
+}
+
+.dark #light-theme-icon {
+  display: inline-block;
+}
+
+.dark #night-theme-icon {
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
