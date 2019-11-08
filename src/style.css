@@ -4,6 +4,7 @@
   --main-section-separator-space: 40px;
 
   --main-color: #294e80;
+  --card-fore-color: #000;
   --bottom-bar-back-color: #fff;
   --bottom-bar-border-color: #e4e6ec;
   --menu-fore-color: #53586a;
@@ -19,7 +20,7 @@
   --token-color-f: #ce93d8;
   --token-color-g: #26c6da;
   --token-color-h: #e57373;
-  --table-of-contents-color: rgb(17,17,17);
+  --table-of-contents-color: rgb(17, 17, 17);
 }
 
 /* Overwrite for DarkTheme */
@@ -29,11 +30,11 @@
   --bottom-bar-back-color: #434e76;
   --bottom-bar-border-color: #13151b;
   --menu-fore-color: #5db7fe;
-  --card-fore-color: #E3E7ED;
+  --card-fore-color: #e3e7ed;
   --a-link-color: #6dc7fd;
   --a-visited-color: #5db7fe;
-  --table-of-contents-color: #DCE0EF;
-  --section-separator: #7B84AA;
+  --table-of-contents-color: #dce0ef;
+  --section-separator: #7b84aa;
 }
 
 body {
@@ -169,9 +170,13 @@ ul {
   width: 50px;
 }
 
-.bottom-bar {
+#docs-icon path {
+  fill: var(--card-fore-color);
+}
+
+.bottom-menu {
   position: fixed;
-  display: flex;
+  left: 0;
   bottom: 0;
   width: 100vw;
   z-index: 9999;
@@ -179,6 +184,10 @@ ul {
   transition: all 0.3s ease;
   background: var(--bottom-bar-back-color);
   border-top: 1px solid var(--bottom-bar-border-color);
+}
+
+.bottom-bar {
+  display: flex;
 }
 
 .bottom-bar_btn {
@@ -234,7 +243,22 @@ ul {
 }
 
 @media screen and (min-width: 768px) {
+  .page-wrapper {
+    max-width: 1300px;
+    margin: auto;
+  }
   #navbar {
-    position: fixed;
+    position: relative;
+    top: 0;
+    margin-right: 20px;
+  }
+  #Table_of_Contents {
+    position: sticky;
+    top: 0;
+  }
+  .page-wrapper {
+    display: flex;
+  }
+  .bottom-menu {
   }
 }
