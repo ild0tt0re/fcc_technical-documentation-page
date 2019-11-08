@@ -21,12 +21,17 @@ function initIntersectionApi() {
 
     var callback = (entries, observer) => {
         entries.forEach(entry => {
+
             var $section = document.getElementById(entry.target.id + "-menu-item");
-            if ($section && entry.isIntersecting) {
+            if (!$section) return;
+
+            var sectionFontWeight = $section.style.fontWeight;
+
+            if (entry.isIntersecting && sectionFontWeight !== 'bold') {
                 $section.style.fontWeight = 'bold';
             }
 
-            if ($section && !entry.isIntersecting) {
+            if (!entry.isIntersecting && sectionFontWeight !== '100') {
                 $section.style.fontWeight = '100';
             }
 
