@@ -1,6 +1,6 @@
 :root {
   --mobile-margin: 20px;
-  --main-section-anchor-space: 4px;
+  --main-section-anchor-space: 10px;
   --main-section-separator-space: 40px;
 
   --main-color: #294e80;
@@ -35,11 +35,13 @@ body {
   font-weight: 100;
 }
 
-.main-section {
+.main-section,
+#Table_of_Contents {
   padding-top: var(--main-section-anchor-space);
 }
 
-.main-section h2 {
+.main-section h2,
+#Table_of_Contents h2 {
   margin-top: 0;
 }
 
@@ -47,7 +49,8 @@ body {
   content: "";
   display: block;
   position: relative;
-  margin: var(--main-section-separator-space) 20px calc(var(--main-section-separator-space) - var(--main-section-anchor-space));
+  margin: var(--main-section-separator-space) 20px
+    calc(var(--main-section-separator-space) - var(--main-section-anchor-space));
   border-bottom: 1px solid #ececec;
 }
 
